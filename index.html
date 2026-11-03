@@ -1,0 +1,1444 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zebtony Divine Chidubem | Personal Profile</title>
+  <meta name="description"
+    content="Personal profile of Zebtony Divine Chidubem — Computer Science Engineering student at the University of Dunaújváros, Hungary, and founder of Enroute Travels.">
+  <meta name="keywords"
+    content="Zebtony Divine Chidubem, Enroute Travels, Computer Science, University of Dunaújváros, Nigeria, Hungary, aviation, travel business">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&display=swap"
+    rel="stylesheet">
+  <style>
+    /* ═══════════════════════════════════════
+       RESET & TOKENS
+    ═══════════════════════════════════════ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #09090f;
+      --surface:      #0e1020;
+      --card:         #131629;
+      --border:       rgba(255,255,255,0.06);
+      --border-hover: rgba(139,109,255,0.35);
+
+      --primary:      #8b6dff;
+      --primary-dark: #5b3fd8;
+      --secondary:    #00d4aa;
+      --gold:         #f0b429;
+      --red:          #ff6b6b;
+
+      --text:         #eaecf4;
+      --muted:        #7a85a3;
+      --subtle:       #3a4060;
+
+      --grad-primary: linear-gradient(135deg, #8b6dff 0%, #5b3fd8 100%);
+      --grad-gold:    linear-gradient(135deg, #f0b429 0%, #d4850a 100%);
+      --grad-teal:    linear-gradient(135deg, #00d4aa 0%, #009e80 100%);
+      --grad-card:    linear-gradient(145deg, #131629, #0e1020);
+      --grad-hero:    linear-gradient(135deg, #0e1020 0%, #09090f 55%, #110d25 100%);
+
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 22px;
+      --radius-xl: 32px;
+
+      --shadow-glow: 0 0 60px rgba(139,109,255,0.22);
+      --shadow-card: 0 8px 40px rgba(0,0,0,0.5);
+      --shadow-btn:  0 4px 20px rgba(139,109,255,0.4);
+
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --t:    0.28s;
+
+      --font: 'Outfit', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font);
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::-webkit-scrollbar          { width: 5px; }
+    ::-webkit-scrollbar-track    { background: var(--bg); }
+    ::-webkit-scrollbar-thumb    { background: var(--primary); border-radius: 3px; }
+
+    /* ═══════════════════════════════════════
+       TYPOGRAPHY
+    ═══════════════════════════════════════ */
+    h1 { font-size: clamp(2.4rem, 6vw, 4rem); font-weight: 800; line-height: 1.1; }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.4rem); font-weight: 700; line-height: 1.2; }
+    h3 { font-size: 1.25rem; font-weight: 700; }
+    h4 { font-size: 1rem; font-weight: 600; }
+    p  { color: var(--muted); font-size: 0.96rem; }
+
+    strong { color: var(--text); }
+
+    .grad-text {
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .grad-text-gold {
+      background: var(--grad-gold);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ═══════════════════════════════════════
+       LAYOUT
+    ═══════════════════════════════════════ */
+    .container {
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 5.5rem 0; }
+
+    .section-label {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.6rem;
+    }
+
+    .section-title { margin-bottom: 1rem; }
+
+    /* ═══════════════════════════════════════
+       HEADER & NAV
+    ═══════════════════════════════════════ */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      background: rgba(9,9,15,0.82);
+      border-bottom: 1px solid var(--border);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1020px;
+      margin: 0 auto;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .nav-logo {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+      text-decoration: none;
+      background: var(--grad-primary);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 0.15rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.88rem;
+      font-weight: 500;
+      padding: 0.38rem 0.85rem;
+      border-radius: 50px;
+      transition: color var(--t) var(--ease), background var(--t) var(--ease);
+    }
+
+    .nav-links a:hover,
+    .nav-links a.active {
+      color: var(--text);
+      background: rgba(139,109,255,0.1);
+    }
+
+    /* ═══════════════════════════════════════
+       BUTTONS
+    ═══════════════════════════════════════ */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.45rem;
+      padding: 0.68rem 1.55rem;
+      border-radius: 50px;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      outline: none;
+      text-decoration: none;
+      transition: transform var(--t) var(--ease), box-shadow var(--t) var(--ease), background var(--t) var(--ease);
+    }
+
+    .btn:hover   { transform: translateY(-2px); }
+    .btn:active  { transform: translateY(0); }
+
+    .btn-primary {
+      background: var(--grad-primary);
+      color: #fff;
+      box-shadow: var(--shadow-btn);
+    }
+    .btn-primary:hover { box-shadow: 0 8px 32px rgba(139,109,255,0.55); }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--primary);
+      border: 2px solid var(--primary);
+    }
+    .btn-outline:hover { background: rgba(139,109,255,0.1); }
+
+    .btn-gold {
+      background: var(--grad-gold);
+      color: #fff;
+      box-shadow: 0 4px 20px rgba(240,180,41,0.35);
+    }
+    .btn-gold:hover { box-shadow: 0 8px 28px rgba(240,180,41,0.5); }
+
+    .btn-teal {
+      background: transparent;
+      color: var(--secondary);
+      border: 1.5px solid rgba(0,212,170,0.3);
+    }
+    .btn-teal:hover { background: rgba(0,212,170,0.08); }
+
+    /* ═══════════════════════════════════════
+       HERO
+    ═══════════════════════════════════════ */
+    #hero {
+      background: var(--grad-hero);
+      position: relative;
+      overflow: hidden;
+      padding: 5rem 0 4rem;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+    }
+
+    /* Background orbs */
+    .orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(100px);
+      opacity: 0.14;
+      pointer-events: none;
+    }
+    .orb-1 { width: 560px; height: 560px; background: #8b6dff; top: -180px; right: -120px; animation: pulse 9s ease-in-out infinite; }
+    .orb-2 { width: 380px; height: 380px; background: #00d4aa; bottom: -100px; left: -60px; animation: pulse 11s ease-in-out infinite 2s; }
+    .orb-3 { width: 220px; height: 220px; background: #f0b429; top: 55%; left: 42%; animation: pulse 7s ease-in-out infinite 4s; }
+
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);   opacity: 0.14; }
+      50%       { transform: scale(1.1); opacity: 0.22; }
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      gap: 4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 1.1rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--secondary);
+      border-radius: 1px;
+    }
+
+    .hero-text h1 { margin-bottom: 0.4rem; }
+
+    .hero-role {
+      font-size: 1.1rem;
+      font-weight: 500;
+      color: var(--muted);
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-role span {
+      color: var(--gold);
+      font-weight: 600;
+    }
+
+    .hero-intro {
+      font-size: 1rem;
+      color: var(--muted);
+      max-width: 500px;
+      margin-bottom: 2.2rem;
+      line-height: 1.75;
+    }
+
+    .hero-cta { display: flex; gap: 0.9rem; flex-wrap: wrap; }
+
+    /* Profile photo */
+    .photo-stack {
+      position: relative;
+      width: 280px;
+      flex-shrink: 0;
+    }
+
+    .photo-ring {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      background: var(--grad-primary);
+      padding: 4px;
+      box-shadow: var(--shadow-glow);
+      position: relative;
+    }
+
+    .photo-ring img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .badge {
+      position: absolute;
+      background: var(--card);
+      border: 1px solid var(--border-hover);
+      border-radius: 50px;
+      padding: 0.45rem 0.95rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      white-space: nowrap;
+      box-shadow: var(--shadow-card);
+    }
+
+    .badge-1 { bottom: 10px; right: -18px; color: var(--secondary); }
+    .badge-2 { top: 18px;   left: -30px;  color: var(--gold); }
+
+    /* stat strip */
+    .hero-stats {
+      display: flex;
+      gap: 2rem;
+      margin-top: 2.4rem;
+      flex-wrap: wrap;
+    }
+
+    .stat .num  { font-size: 1.8rem; font-weight: 800; line-height: 1; color: var(--text); }
+    .stat .lbl  { font-size: 0.75rem; color: var(--muted); margin-top: 2px; }
+
+    /* ═══════════════════════════════════════
+       ABOUT SECTION
+    ═══════════════════════════════════════ */
+    #about { background: var(--surface); }
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3.5rem;
+      align-items: start;
+    }
+
+    .about-text p { margin-bottom: 1rem; }
+    .about-text p:first-of-type { font-size: 1.03rem; color: var(--text); }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.7rem;
+      margin-top: 0.5rem;
+    }
+
+    .info-chip {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 0.9rem 1.1rem;
+      transition: border-color var(--t) var(--ease), transform var(--t) var(--ease);
+    }
+
+    .info-chip:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+
+    .info-chip .lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: var(--muted); margin-bottom: 3px; }
+    .info-chip .val { font-size: 0.9rem; font-weight: 600; color: var(--text); }
+
+    .about-cta { display: flex; gap: 0.75rem; flex-wrap: wrap; margin-top: 1.6rem; }
+
+    /* ═══════════════════════════════════════
+       EDUCATION TIMELINE
+    ═══════════════════════════════════════ */
+    #education { background: var(--bg); }
+
+    .timeline {
+      position: relative;
+      margin-top: 3rem;
+      padding-left: 2rem;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: linear-gradient(to bottom, var(--primary), var(--secondary), transparent);
+      border-radius: 2px;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 2.5rem;
+    }
+
+    .timeline-item::before {
+      content: '';
+      position: absolute;
+      left: -2.55rem;
+      top: 0.5rem;
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: var(--primary);
+      border: 2px solid var(--bg);
+      box-shadow: 0 0 0 3px rgba(139,109,255,0.2);
+    }
+
+    .timeline-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 1.4rem 1.6rem;
+      transition: border-color var(--t) var(--ease), transform var(--t) var(--ease);
+    }
+
+    .timeline-card:hover { border-color: var(--border-hover); transform: translateX(4px); }
+
+    .timeline-period {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--secondary);
+      margin-bottom: 0.4rem;
+    }
+
+    .timeline-card h3 { color: var(--text); margin-bottom: 0.2rem; font-size: 1.05rem; }
+    .timeline-card .institution { color: var(--primary); font-size: 0.88rem; font-weight: 600; margin-bottom: 0.6rem; }
+    .timeline-card p { font-size: 0.9rem; }
+
+    .cert-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: rgba(240,180,41,0.1);
+      border: 1px solid rgba(240,180,41,0.25);
+      border-radius: 50px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--gold);
+      margin-top: 0.75rem;
+    }
+
+    /* ═══════════════════════════════════════
+       BUSINESS / ENROUTE TRAVELS
+    ═══════════════════════════════════════ */
+    #business { background: var(--surface); }
+
+    .business-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .business-logo-wrap {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      text-align: center;
+    }
+
+    .business-logo-wrap img {
+      width: 180px;
+      height: auto;
+      border-radius: var(--radius-md);
+      object-fit: contain;
+    }
+
+    .business-logo-wrap h3 { color: var(--text); }
+    .business-logo-wrap p  { font-size: 0.88rem; }
+
+    .founder-tag {
+      background: var(--grad-gold);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 0.3rem 0.9rem;
+      border-radius: 50px;
+    }
+
+    .services-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .services-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 0.75rem;
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      font-size: 0.9rem;
+      color: var(--text);
+      transition: border-color var(--t) var(--ease), transform var(--t) var(--ease);
+    }
+
+    .services-list li:hover { border-color: var(--border-hover); transform: translateX(4px); }
+
+    .services-list .icon {
+      font-size: 1.1rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .business-lesson {
+      background: rgba(240,180,41,0.06);
+      border: 1px solid rgba(240,180,41,0.2);
+      border-radius: var(--radius-md);
+      padding: 1.2rem 1.4rem;
+      margin-top: 1.5rem;
+    }
+
+    .business-lesson h4 { color: var(--gold); margin-bottom: 0.5rem; }
+    .business-lesson p  { font-size: 0.88rem; }
+
+    /* ═══════════════════════════════════════
+       INTERESTS & GOALS
+    ═══════════════════════════════════════ */
+    #interests { background: var(--bg); }
+
+    .ig-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin-top: 3rem;
+      align-items: start;
+    }
+
+    /* interests pill list */
+    .interests-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.6rem;
+      list-style: none;
+    }
+
+    .interests-pills li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 0.45rem 1rem;
+      font-size: 0.87rem;
+      color: var(--text);
+      transition: border-color var(--t) var(--ease), transform var(--t) var(--ease);
+      cursor: default;
+    }
+
+    .interests-pills li:hover { border-color: var(--border-hover); transform: scale(1.03); }
+
+    /* goals */
+    .goals-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.8rem;
+    }
+
+    .goals-list li {
+      display: flex;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+      color: var(--muted);
+      line-height: 1.6;
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      transition: border-color var(--t) var(--ease), transform var(--t) var(--ease);
+    }
+
+    .goals-list li:hover { border-color: var(--border-hover); transform: translateX(4px); }
+
+    .goals-list .check {
+      color: var(--secondary);
+      font-weight: 700;
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .philosophy-box {
+      grid-column: 1 / -1;
+      background: var(--grad-primary);
+      border-radius: var(--radius-lg);
+      padding: 2rem 2.5rem;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .philosophy-box::before {
+      content: '"';
+      position: absolute;
+      top: -20px;
+      left: 24px;
+      font-size: 10rem;
+      font-weight: 900;
+      color: rgba(255,255,255,0.06);
+      line-height: 1;
+      font-family: Georgia, serif;
+    }
+
+    .philosophy-box p {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #fff;
+      position: relative;
+      z-index: 1;
+      letter-spacing: 0.2px;
+    }
+
+    .philosophy-box .attr {
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: rgba(255,255,255,0.65);
+      margin-top: 0.5rem;
+    }
+
+    /* ═══════════════════════════════════════
+       HTML ELEMENTS SHOWCASE
+    ════════════════════════════════ */
+    .html-demo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
+
+    .html-demo-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 1.5rem;
+      box-shadow: var(--shadow-card);
+    }
+
+    .html-demo-card h3 {
+      color: var(--text);
+      margin-bottom: 0.8rem;
+    }
+
+    .feature-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+      margin-top: 1rem;
+    }
+
+    .feature-list li {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: var(--text);
+      font-size: 0.9rem;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.7rem 0.9rem;
+    }
+
+    .html-demo-card .example-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+      margin-top: 1rem;
+    }
+
+    .html-demo-card a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .html-demo-card a:hover { text-decoration: underline; }
+
+    .demo-image {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: var(--radius-md);
+      margin-top: 1rem;
+      border: 1px solid var(--border);
+    }
+
+    /* ═══════════════════════════════════════
+       CONNECT
+    ═══════════════════════════════════════ */
+    #connect { background: var(--surface); }
+
+    .connect-wrap {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 3rem;
+    }
+
+    .connect-info h3 { color: var(--text); margin-bottom: 1rem; }
+    .connect-info p  { font-size: 0.93rem; margin-bottom: 1.6rem; }
+
+    .social-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .social-links li a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      text-decoration: none;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 500;
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1rem;
+      transition: border-color var(--t) var(--ease), color var(--t) var(--ease), transform var(--t) var(--ease);
+    }
+
+    .social-links li a:hover { border-color: var(--border-hover); color: var(--text); transform: translateX(4px); }
+
+    .contact-form-card {
+      background: var(--grad-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 2rem;
+    }
+
+    .contact-form-card h3 { color: var(--text); margin-bottom: 1.25rem; }
+
+    .form-group { display: flex; flex-direction: column; gap: 0.75rem; }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; }
+
+    .contact-form-card input,
+    .contact-form-card textarea {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 0.72rem 1rem;
+      font-family: var(--font);
+      font-size: 0.9rem;
+      color: var(--text);
+      outline: none;
+      transition: border-color var(--t) var(--ease), box-shadow var(--t) var(--ease);
+      resize: vertical;
+    }
+
+    .contact-form-card input:focus,
+    .contact-form-card textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(139,109,255,0.14);
+    }
+
+    .contact-form-card input::placeholder,
+    .contact-form-card textarea::placeholder { color: var(--subtle); }
+
+    /* ═══════════════════════════════════════
+       FOOTER
+    ═══════════════════════════════════════ */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 1.6rem 1.5rem;
+      text-align: center;
+    }
+
+    footer p { font-size: 0.82rem; color: var(--muted); }
+
+    /* ═══════════════════════════════════════
+       TOAST
+    ═══════════════════════════════════════ */
+    #toast {
+      position: fixed;
+      bottom: 1.8rem;
+      right: 1.8rem;
+      z-index: 9999;
+      background: var(--card);
+      border: 1px solid rgba(0,212,170,0.28);
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1.4rem;
+      font-size: 0.88rem;
+      color: var(--secondary);
+      box-shadow: var(--shadow-card);
+      opacity: 0;
+      pointer-events: none;
+      transform: translateY(16px);
+      transition: opacity 0.3s var(--ease), transform 0.3s var(--ease);
+    }
+    #toast.show { opacity: 1; transform: translateY(0); }
+
+    /* ═══════════════════════════════════════
+       AVIATION PHOTO GALLERY
+    ═══════════════════════════════════════ */
+    .aviation-gallery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.85rem;
+      margin-top: 1.2rem;
+    }
+
+    .gallery-img-wrap {
+      position: relative;
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      transition: border-color var(--t) var(--ease), transform var(--t) var(--ease), box-shadow var(--t) var(--ease);
+      cursor: pointer;
+      aspect-ratio: 3/4;
+    }
+
+    .gallery-img-wrap.wide {
+      grid-column: 1 / -1;
+      aspect-ratio: 16/9;
+    }
+
+    .gallery-img-wrap:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-3px);
+      box-shadow: 0 16px 40px rgba(0,0,0,0.55);
+    }
+
+    .gallery-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s var(--ease);
+    }
+
+    .gallery-img-wrap:hover img { transform: scale(1.04); }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 0.6rem 0.85rem;
+      background: linear-gradient(to top, rgba(9,9,15,0.92) 0%, transparent 100%);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: rgba(255,255,255,0.75);
+      letter-spacing: 0.5px;
+    }
+
+    /* ═══════════════════════════════════════
+       RESPONSIVE
+    ═══════════════════════════════════════ */
+    @media (max-width: 720px) {
+      .hero-grid,
+      .about-layout,
+      .business-grid,
+      .ig-grid,
+      .connect-wrap { grid-template-columns: 1fr; }
+
+      .photo-stack    { order: -1; display: flex; justify-content: center; }
+      .photo-ring     { width: 200px; height: 200px; }
+      .badge-2        { left: 0; }
+      .info-grid      { grid-template-columns: 1fr 1fr; }
+      .form-row       { grid-template-columns: 1fr; }
+      .nav-links      { display: none; }
+      .philosophy-box { padding: 1.5rem; }
+      .philosophy-box p { font-size: 1rem; }
+      .aviation-gallery { grid-template-columns: 1fr; }
+      .gallery-img-wrap.wide { aspect-ratio: 4/3; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ═══════════ HEADER ═══════════ -->
+  <header id="top">
+    <nav>
+      <a href="#top" class="nav-logo" id="nav-brand">ZDC ✈</a>
+      <ul class="nav-links">
+        <li><a href="#about"      id="nav-about">About</a></li>
+        <li><a href="#education"  id="nav-edu">Education</a></li>
+        <li><a href="#business"   id="nav-biz">Business</a></li>
+        <li><a href="#interests"  id="nav-interests">Interests</a></li>
+        <li><a href="#connect"    id="nav-connect">Connect</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════ HERO ═══════════ -->
+  <section id="hero">
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <div class="hero-eyebrow">About Me</div>
+          <h1>Zebtony<br><span class="grad-text">Divine<br>Chidubem</span></h1>
+          <p class="hero-role">
+            CS Engineering Student &nbsp;·&nbsp; <span>Founder of Enroute Travels</span>
+          </p>
+          <p class="hero-intro">
+            An ambitious, hardworking and forward-thinking 21-year-old from Imo State, Nigeria — 
+            currently studying in Hungary and building things that matter.
+          </p>
+          <div class="hero-cta">
+            <a href="#about"    class="btn btn-primary" id="hero-btn-about">Learn About Me</a>
+            <a href="#business" class="btn btn-outline" id="hero-btn-biz">Enroute Travels ✈</a>
+          </div>
+          <div class="hero-stats">
+            <div class="stat">
+              <div class="num grad-text">21</div>
+              <div class="lbl">Years Old</div>
+            </div>
+            <div class="stat">
+              <div class="num grad-text-gold">20</div>
+              <div class="lbl">Founded Business At</div>
+            </div>
+            <div class="stat">
+              <div class="num" style="color:var(--secondary)">3</div>
+              <div class="lbl">Countries Studied In</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="photo-stack">
+          <div class="photo-ring">
+            <img src="assets/kcaa-photo.jpg" alt="Zebtony Divine Chidubem at Kenya Civil Aviation Authority" id="profile-photo">
+          </div>
+          <span class="badge badge-1">🎓 University of Dunaújváros</span>
+          <span class="badge badge-2">✈ KCAA Certified</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ ABOUT ═══════════ -->
+  <section id="about">
+    <div class="container">
+      <span class="section-label">Who I Am</span>
+      <h2 class="section-title grad-text">About Me</h2>
+
+      <div class="about-layout">
+        <div class="about-text">
+          <p>
+            My name is <strong>Zebtony Divine Chidubem</strong>. I am 21 years old, originally from 
+            <strong>Imo State, Nigeria</strong>, and currently living in <strong>Hungary</strong>, where I am 
+            studying Computer Science Engineering at the University of Dunaújváros.
+          </p>
+          <p>
+            I consider myself an ambitious, hardworking and forward-thinking young man who believes in 
+            continuous learning, personal development and creating opportunities.
+          </p>
+          <p>
+            I enjoy exploring new ideas, meeting people, learning about different cultures and challenging 
+            myself to achieve greater things. Whether in the classroom, in business, or in my community, 
+            I bring commitment, energy and creativity to everything I do.
+          </p>
+          <p>
+            My journey has taken me from Nigeria to Kenya and now to Hungary — each country leaving me with 
+            new skills, perspectives and a broader understanding of the world.
+          </p>
+          <div class="about-cta">
+            <button class="btn btn-gold"  id="btn-enroute"   onclick="document.querySelector('#business').scrollIntoView({behavior:'smooth'})">✈ Visit Enroute Travels</button>
+            <button class="btn btn-teal"  id="btn-goals"     onclick="document.querySelector('#interests').scrollIntoView({behavior:'smooth'})">🎯 See My Goals</button>
+          </div>
+        </div>
+
+        <div>
+          <div class="info-grid">
+            <div class="info-chip">
+              <div class="lbl">Full Name</div>
+              <div class="val">Zebtony Divine Chidubem</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">Age</div>
+              <div class="val">21 Years Old</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">Nationality</div>
+              <div class="val">Nigerian 🇳🇬</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">Based In</div>
+              <div class="val">Hungary 🇭🇺</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">University</div>
+              <div class="val">University of Dunaújváros</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">Programme</div>
+              <div class="val">Computer Science Engineering</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">Languages</div>
+              <div class="val">English, Igbo</div>
+            </div>
+            <div class="info-chip">
+              <div class="lbl">Status</div>
+              <div class="val">Student &amp; Entrepreneur</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ EDUCATION ═══════════ -->
+  <section id="education">
+    <div class="container">
+      <span class="section-label">My Journey</span>
+      <h2 class="section-title grad-text">Educational Background</h2>
+      <p style="max-width:560px;">
+        My educational path has crossed three countries — Nigeria, Kenya, and Hungary — each chapter shaping 
+        who I am and broadening the opportunities ahead of me.
+      </p>
+
+      <div class="timeline">
+
+        <!-- Item 1 -->
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-period">Secondary School · Nigeria</span>
+            <h3>Madonna Model Secondary School</h3>
+            <div class="institution">Owerri, Imo State, Nigeria</div>
+            <p>
+              My academic journey began here in Owerri. I completed my secondary education at Madonna Model 
+              Secondary School, where I developed a strong foundation in sciences, mathematics and the 
+              humanities, and began to discover my passion for technology.
+            </p>
+          </div>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-period">Diploma Studies · Kenya</span>
+            <h3>Airport Operations &amp; Flight Operations</h3>
+            <div class="institution">Kenya Aeronautical College (KAC), Nairobi, Kenya</div>
+            <p>
+              Following secondary school, I pursued my strong interest in aviation at Kenya Aeronautical College 
+              in Nairobi, Kenya. I successfully obtained <strong>diplomas in both Airport Operations and Flight 
+              Operations</strong>, gaining hands-on knowledge of the aviation industry.
+            </p>
+            <p style="margin-top: 0.5rem;">
+              I also earned an internationally recognised certification from the 
+              <strong>International Air Transport Association (IATA)</strong> in Airport Operations — 
+              achieving this at just 18 years old.
+            </p>
+            <div>
+              <span class="cert-tag">🏅 IATA Certified — Airport Operations (Age 18)</span>
+            </div>
+            <!-- Aviation photo gallery -->
+            <div class="aviation-gallery">
+              <div class="gallery-img-wrap">
+                <img src="assets/aircraft-photo.jpg" alt="Zebtony standing next to a Cessna aircraft on the apron at Kenya Aeronautical College" loading="lazy">
+                <div class="gallery-caption">✈ On the apron — Kenya Aeronautical College</div>
+              </div>
+              <div class="gallery-img-wrap">
+                <img src="assets/kcaa-photo.jpg" alt="Zebtony at Kenya Civil Aviation Authority headquarters" loading="lazy">
+                <div class="gallery-caption">🏢 KCAA Headquarters, Nairobi</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="timeline-item">
+          <div class="timeline-card">
+            <span class="timeline-period">Current · Hungary</span>
+            <h3>Computer Science Engineering</h3>
+            <div class="institution">University of Dunaújváros, Dunaújváros, Hungary</div>
+            <p>
+              My passion for technology led me to Hungary, where I am currently pursuing a degree in 
+              <strong>Computer Science Engineering</strong> at the University of Dunaújváros. I believe that 
+              combining my aviation knowledge with technology will open doors to greater opportunities and 
+              allow me to contribute to the development of modern industries.
+            </p>
+            <p style="margin-top: 0.5rem;">
+              As an international student, I am also deeply interested in student representation, cultural 
+              integration and creating a more inclusive environment for international students at the university.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ BUSINESS ═══════════ -->
+  <section id="business">
+    <div class="container">
+      <span class="section-label">Entrepreneurship</span>
+      <h2 class="section-title grad-text">Enroute Travels</h2>
+      <p style="max-width: 600px;">
+        One of the things I am most proud of — starting my own travel business at the age of 20, built on 
+        a genuine passion for aviation and helping people explore the world.
+      </p>
+
+      <div class="business-grid">
+
+        <div class="business-logo-wrap">
+          <img src="assets/enroute-logo.png" alt="Enroute Travels logo" id="enroute-logo-img">
+          <span class="founder-tag">Founder &amp; CEO</span>
+          <h3>Enroute Travels</h3>
+          <p>
+            A travel business born out of my passion for aviation, travelling and helping people 
+            discover the world. Founded at age 20.
+          </p>
+          <a href="mailto:zebtony@example.com" class="btn btn-gold" id="btn-contact-enroute">
+            ✉ Enquire About Travel
+          </a>
+        </div>
+
+        <div>
+          <h3 style="color: var(--text); margin-bottom: 1.1rem;">Our Services</h3>
+          <ul class="services-list" id="services-list">
+            <li><span class="icon">✈</span> International and domestic flight bookings</li>
+            <li><span class="icon">🎫</span> Flight ticket reservations and travel assistance</li>
+            <li><span class="icon">🏝</span> Holiday packages and travel arrangements</li>
+            <li><span class="icon">🗺</span> Travel planning and itinerary assistance</li>
+            <li><span class="icon">🤝</span> Customer support and travel information</li>
+            <li><span class="icon">🔍</span> Helping individuals discover suitable travel opportunities</li>
+          </ul>
+
+          <div class="business-lesson">
+            <h4>What Starting a Business Taught Me</h4>
+            <p>
+              Starting Enroute Travels at 20 taught me valuable lessons about responsibility, customer 
+              relationships, communication, business management and entrepreneurship. It encouraged me to 
+              think independently and become more creative in solving real problems. My vision is to grow 
+              Enroute Travels into a recognised and trusted travel brand.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ INTERESTS & GOALS ═══════════ -->
+  <section id="interests">
+    <div class="container">
+      <span class="section-label">What Drives Me</span>
+      <h2 class="section-title grad-text">Interests &amp; Goals</h2>
+
+      <div class="ig-grid">
+
+        <!-- Interests -->
+        <div>
+          <h3 style="color: var(--text); margin-bottom: 1.2rem;">Areas of Interest</h3>
+          <ul class="interests-pills" id="interests-list">
+            <li>💻 Computer Science &amp; Technology</li>
+            <li>✈ Aviation &amp; Airline Operations</li>
+            <li>🚀 Entrepreneurship &amp; Business</li>
+            <li>🌍 Travel &amp; Tourism</li>
+            <li>🤖 Digital Innovation</li>
+            <li>🏆 Leadership &amp; Youth Empowerment</li>
+            <li>🤝 International Relations</li>
+            <li>🎭 Cultural Integration</li>
+            <li>📖 Reading &amp; Learning</li>
+            <li>⚽ Football</li>
+            <li>🎵 Music</li>
+            <li>🧩 Problem Solving</li>
+          </ul>
+        </div>
+
+        <!-- Goals -->
+        <div>
+          <h3 style="color: var(--text); margin-bottom: 1.2rem;">My Future Goals</h3>
+          <ul class="goals-list" id="goals-list">
+            <li>
+              <span class="check">→</span>
+              Graduate with a degree in Computer Science Engineering and apply it across modern industries
+            </li>
+            <li>
+              <span class="check">→</span>
+              Continue growing Enroute Travels into a recognised and trusted international travel brand
+            </li>
+            <li>
+              <span class="check">→</span>
+              Combine my aviation background with technology to create innovative industry solutions
+            </li>
+            <li>
+              <span class="check">→</span>
+              Lead or contribute to a meaningful student representation initiative at the university
+            </li>
+            <li>
+              <span class="check">→</span>
+              Create opportunities for young people in Nigeria, especially in Imo State — through education, 
+              mentorship and entrepreneurship
+            </li>
+            <li>
+              <span class="check">→</span>
+              Become someone who inspires young people and contributes positively to society
+            </li>
+          </ul>
+        </div>
+
+        <!-- Philosophy -->
+        <div class="philosophy-box">
+          <p>
+            Dream big, take action, remain consistent and never stop learning.
+          </p>
+          <p class="attr">— Zebtony Divine Chidubem · Personal Philosophy</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ HTML ELEMENTS SHOWCASE ═══════════ -->
+  <section id="elements">
+    <div class="container">
+      <span class="section-label">Core HTML</span>
+      <h2 class="section-title grad-text">Buttons, Lists, Images, Links, Headings &amp; Paragraphs</h2>
+      <p style="max-width: 760px;">This section demonstrates the main HTML elements requested for the assignment in a clean and readable format.</p>
+
+      <div class="html-demo-grid">
+        <div class="html-demo-card">
+          <h3>Buttons</h3>
+          <p>Buttons help users trigger actions or move around the page.</p>
+          <div class="hero-cta" style="margin-top: 1rem;">
+            <button class="btn btn-primary">Primary Button</button>
+            <button class="btn btn-outline">Outline Button</button>
+          </div>
+        </div>
+
+        <div class="html-demo-card">
+          <h3>Lists</h3>
+          <p>Lists make information easier to scan.</p>
+          <ul class="feature-list">
+            <li>✔ Travel planning</li>
+            <li>✔ Business development</li>
+            <li>✔ Aviation interests</li>
+          </ul>
+        </div>
+
+        <div class="html-demo-card">
+          <h3>Images</h3>
+          <p>Images add visual context and personality.</p>
+          <img class="demo-image" src="assets/aircraft-photo.jpg" alt="Airplane image used in profile showcase" loading="lazy">
+        </div>
+
+        <div class="html-demo-card">
+          <h3>Hyperlinks</h3>
+          <p>Links connect content to other pages or resources.</p>
+          <div class="example-links">
+            <a href="https://www.google.com" target="_blank" rel="noopener noreferrer">Google</a>
+            <a href="https://www.aviation.gov" target="_blank" rel="noopener noreferrer">Aviation</a>
+            <a href="#business">Jump to Business</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ CONNECT ═══════════ -->
+  <section id="connect">
+    <div class="container">
+      <span class="section-label">Let's Talk</span>
+      <h2 class="section-title grad-text">Get In Touch</h2>
+
+      <div class="connect-wrap">
+        <div class="connect-info">
+          <h3>I'd Love to Hear From You</h3>
+          <p>
+            Whether you want to enquire about travel services, collaborate on a project, discuss ideas, 
+            or simply connect — feel free to reach out. I am always open to new conversations, 
+            opportunities and friendships.
+          </p>
+
+          <ul class="social-links" id="social-links">
+            <li>
+              <a href="mailto:zebtony@example.com" id="link-email">
+                ✉️ &nbsp;Send Me an Email
+              </a>
+            </li>
+            <li>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" id="link-linkedin">
+                💼 &nbsp;Connect on LinkedIn
+              </a>
+            </li>
+            <li>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" id="link-twitter">
+                🐦 &nbsp;Follow on Twitter / X
+              </a>
+            </li>
+            <li>
+              <a href="https://github.com" target="_blank" rel="noopener noreferrer" id="link-github">
+                🐙 &nbsp;Find Me on GitHub
+              </a>
+            </li>
+            <li>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" id="link-instagram">
+                📸 &nbsp;Follow on Instagram
+              </a>
+            </li>
+          </ul>
+
+          <div style="margin-top: 1.5rem; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+            <button class="btn btn-primary" id="btn-download-cv"
+              onclick="showToast('CV download will be available soon!')">
+              ⬇ Download CV
+            </button>
+          </div>
+        </div>
+
+        <!-- Contact form -->
+        <div class="contact-form-card">
+          <h3>Send a Message</h3>
+          <form id="contact-form" onsubmit="handleForm(event)">
+            <div class="form-group">
+              <div class="form-row">
+                <input type="text"  id="f-name"    name="name"    placeholder="Your Name"   required>
+                <input type="email" id="f-email"   name="email"   placeholder="Your Email"  required>
+              </div>
+              <input  type="text"   id="f-subject" name="subject" placeholder="Subject"     required>
+              <textarea             id="f-message" name="message" placeholder="Your message…" rows="5" required></textarea>
+              <button type="submit" class="btn btn-primary" id="btn-send" style="align-self: flex-start;">
+                Send Message →
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════ FOOTER ═══════════ -->
+  <footer>
+    <p>
+      &copy; 2026 &nbsp;·&nbsp; <strong style="color:var(--text)">Zebtony Divine Chidubem</strong> 
+      &nbsp;·&nbsp; 7th Week HTML Lab Assignment &nbsp;·&nbsp; University of Dunaújváros
+    </p>
+  </footer>
+
+  <!-- Toast -->
+  <div id="toast" role="status" aria-live="polite"></div>
+
+  <!-- ═══════════ JAVASCRIPT ═══════════ -->
+  <script>
+    /* ----- Toast ------------------------------------------------ */
+    function showToast(msg) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      clearTimeout(t._timer);
+      t._timer = setTimeout(() => t.classList.remove('show'), 3200);
+    }
+
+    /* ----- Contact form ----------------------------------------- */
+    function handleForm(e) {
+      e.preventDefault();
+      const name = document.getElementById('f-name').value.trim();
+      showToast(`Thanks ${name}! Your message has been received. I'll get back to you soon ✌`);
+      e.target.reset();
+    }
+
+    /* ----- Animated skill bars (IntersectionObserver) ----------- */
+    const fillEls = document.querySelectorAll('.skill-bar-fill');
+    if (fillEls.length) {
+      const skillObs = new IntersectionObserver(entries => {
+        entries.forEach(en => {
+          if (en.isIntersecting) {
+            en.target.style.transform = `scaleX(${en.target.dataset.pct})`;
+            skillObs.unobserve(en.target);
+          }
+        });
+      }, { threshold: 0.35 });
+      fillEls.forEach(f => skillObs.observe(f));
+    }
+
+    /* ----- Active nav highlight --------------------------------- */
+    const sections = document.querySelectorAll('section[id]');
+    const navAs    = document.querySelectorAll('.nav-links a');
+
+    const navObs = new IntersectionObserver(entries => {
+      entries.forEach(en => {
+        if (en.isIntersecting) {
+          navAs.forEach(a => a.classList.remove('active'));
+          const a = document.querySelector(`.nav-links a[href="#${en.target.id}"]`);
+          if (a) a.classList.add('active');
+        }
+      });
+    }, { threshold: 0.45 });
+
+    sections.forEach(s => navObs.observe(s));
+  </script>
+
+</body>
+</html>
